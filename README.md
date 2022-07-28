@@ -279,6 +279,25 @@ $ cmake -DCMAKE_BUILD_TYPE="Debug;Release" -B "${CMAKE_BINARY_DIR}" -S "./"
 
 ### <font color='#0077c6'>Known Issues</font>
 
-Using MSVC you may get the following warning:
+- [ ] Using MSVC you may get the following warning:
 cl : command line warning D9002: ignoring unknown option '/std:c++' 
 This warning may be safely ignored.
+
+### <font color='#0077c6'>TODO</font>
+
+- [ ] Consider supporting implicit type conversion for option value types.
+  E.g., 
+     $./app --latitude 30.516864 or --latitude "30.516864"
+
+  ~~~C++
+  double lat = options["latitude"];
+  ~~~
+
+  ​    $.app --enable-logging false
+
+  ~~~C++
+  bool enable_logging = options["enable-logging"];
+  ~~~
+
+
+  ​	
