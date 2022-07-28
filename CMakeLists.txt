@@ -25,10 +25,10 @@ CMAKE_POLICY(SET CMP0091 NEW)
 
 # Compiler ID gets generated here by cmake:
 #
-PROJECT("Command Line Parser Tests"
-		VERSION 0.1.0
+PROJECT("cpp-argv-parser"
+		VERSION 1.0
 		DESCRIPTION "A test for the header only cmd-line-parsing library."
-		HOMEPAGE_URL ""
+		HOMEPAGE_URL "https://github.com/wsberry"
 		LANGUAGES CXX
 )
 
