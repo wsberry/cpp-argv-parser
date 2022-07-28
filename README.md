@@ -184,10 +184,10 @@ The test projects and corresponding documentation have the following delimitatio
 
 ### <font color='#0077c6'>Required Tools for Building the Unit Test Project</font>
 
-&nbsp;&nbsp;\-  [Homebrew](https://brew.sh/) \[required for macOS systems only].
-&nbsp;&nbsp;\-  [Git](https://git-scm.com/) 
-&nbsp;&nbsp;\-  [CMake](https://cmake.org/)
-&nbsp;&nbsp;\-  [Bash](https://www.gnu.org/software/bash/)
+&nbsp;&nbsp;\-  [Homebrew](https://brew.sh/) \[required for macOS systems only].  
+&nbsp;&nbsp;\-  [Git](https://git-scm.com/)   
+&nbsp;&nbsp;\-  [CMake](https://cmake.org/)  
+&nbsp;&nbsp;\-  [Bash](https://www.gnu.org/software/bash/)  
 &nbsp;&nbsp;\-  [Boost UT/μt (micro unit test framework)](https://github.com/boost-ext/ut) (Installed by CMake)
 
 ### <font color='#0077c6'>macOS Users</font>
