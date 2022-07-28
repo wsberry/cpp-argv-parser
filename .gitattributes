@@ -1,0 +1,42 @@
+# -----------------------------------------------------------------------------------------
+# Maintainer: Bill Berry
+# email: wberry.cpp@gmail.com
+# github: https://github.com/wsberry
+# -----------------------------------------------------------------------------------------
+# All source files should have unix line-endings in the repository.
+# Note that unix line-endings work fine on windows. This said, If you don't like this then modify
+# to your needs as provided below.
+#
+
+# Default Setting:
+#
+text=auto eol=lf
+
+# Custom Settings [i.e., Remove comments to customize]:
+#
+# This sets the default behaviour, overriding core.autocrlf
+#
+#* text=auto
+
+# All source files should have unix line-endings in the repository,
+# but convert to native line-endings on checkout:
+#
+# *.c text
+# *.cc text
+# *.cpp text
+# *.cxx text
+# *.h text
+# *.hh text
+# *.hpp text
+# *.hxx text
+
+# Windows specific files should retain windows line-endings:
+#
+#*.sln text eol=crlf
+#*.vcxproj eol=crlf
+
+# Keep executable scripts with LFs so they can be run after being
+# checked out on Windows:
+#
+#*.py text eol=lf
+#*.sh text eol=lf
