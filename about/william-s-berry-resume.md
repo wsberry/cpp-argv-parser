@@ -52,7 +52,7 @@ Lead software engineer of the Portable Flight Planning System (PFPS) Modernizati
 
 #### Education
 
-Springfield College, Massachusetts — M.S. Movement Science (Biomechanics) 3.8/4.0
+Springfield College, Massachusetts — M.S. Movement Science (3.8/4.0)
 
 *Thesis - Developed a mathematical model for calculating moments of the joints and external joint reaction forces using high speed film analysis and force platform data. Data acquisition and modeling software was developed using both FORTRAN and the C programming languages.*
 
