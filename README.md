@@ -287,6 +287,7 @@ This warning may be safely ignored.
 
 - [ ] Consider supporting implicit type conversion for option value types.
   E.g., 
+  
      $./app --latitude 30.516864 or --latitude "30.516864"
 
   ~~~C++
@@ -299,5 +300,5 @@ This warning may be safely ignored.
   bool enable_logging = options["enable-logging"];
   ~~~
 
-
-  ​	
+- [ ] Implement CMake and other source code TODO items.
+  
