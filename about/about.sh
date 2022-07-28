@@ -17,10 +17,10 @@ then
    . "core.sh"
    . "network.sh"
 else
-   if [[ -e "./scripts/core.sh" ]];
+   if [[ -e "../scripts/core.sh" ]];
    then
-      . "./scripts/core.sh"
-      . "./scripts/network.sh"
+      . "../scripts/core.sh"
+      . "../scripts/network.sh"
    else
       echo -e "\n${TAB}Unable to find: './scripts/core.sh'\n"
       #
