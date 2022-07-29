@@ -39,7 +39,7 @@ static auto display_help = []() {
          // Body
          "\n Command Line Options:\n"
          "\n  --in,  -i: [required]"
-         "\n  input file (eg., --in \"myinput.json\")"
+         "\n  input file (eg., --in \"input.json\")"
          "\n\n--out, -o: [optional]"
          "\n  output file (e.g., --out \"result.json\")\n",
 

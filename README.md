@@ -123,7 +123,7 @@ int main(int argc, char** argv)
               "Error: Missing Required Options!",
               "\n Command Line Options:\n"
               "\n  --in,  -i: [required]"
-              "\n  input file (eg., --in \"myinput.json\")"
+              "\n  input file (eg., --in \"input.json\")"
               "\n\n--out, -o: [optional]"
               "\n  output file (e.g., --out \"result.json\")\n",
               pfd::choice::ok,
@@ -137,7 +137,7 @@ int main(int argc, char** argv)
               "Error: Missing Required Options!\n"
               "\n Command Line Options:\n"
               "\n  --in,  -i: [required]"
-              "\n  input file (eg., --in \"myinput.json\")"
+              "\n  input file (eg., --in \"input.json\")"
               "\n\n--out, -o: [optional]"
               "\n  output file (e.g., --out \"result.json\")\n"
               << std::endl; /*flush*/
@@ -157,15 +157,15 @@ If the '--in' option is not provided on the command line in this example then th
 Command Line Args:
   [0]: ./a.out
   [1]: -o
-  [2]: myinputfile.json
+  [2]: input.json
 
 Error: Missing Required Options!
  Command Line Options:
-  --in,  -i: [required] input file (eg., --in "myinput.json")
+  --in,  -i: [required] input file (eg., --in "input.json")
   --out, -o: [optional] output file (e.g., --out "result.json")
 
 Command Line Parse Results:
-  ["out"]: myinputfile.json
+  ["out"]: input.json
   ["app"]: ./a.out
 ~~~
 
@@ -179,7 +179,7 @@ Directories created by the provided build scripts name generated folders with an
 
 The test projects and corresponding documentation have the following delimitations:
 
-1. The Homebrew package manager is assumed for macOS sfor installing updated versions of Git and Bash.
+1. The Homebrew package manager is assumed for macOS for installing updated versions of Git and Bash.
 2. The provided install scripts require bash versions 4.x and above with 5.x being recommended.
 
 ### <font color='#0077c6'>Required Tools for Building the Unit Test Project</font>
@@ -300,5 +300,5 @@ This warning may be safely ignored.
   bool enable_logging = options["enable-logging"];
   ~~~
 
-- [ ] Implement CMake and other source code TODO items.
+- [ ] Complete unit tests.
   

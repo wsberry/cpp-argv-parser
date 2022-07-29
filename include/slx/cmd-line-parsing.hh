@@ -32,13 +32,14 @@
 
 namespace slx {
     /**
-     * \brief The parsed results of the commandline. Where the first string is the long form
-     *           of the option name and the second string is the value.
+     * \brief Stores the parsed results of the commandline. Where the first string is the long form
+     *        of the option name and the second string is its value.
      */
     using command_line_options_result_t = ::std::unordered_map<::std::string, std::string>;
 
     /**
-     * \brief Use this to define your commandline options.
+     * \brief Use this container to define the commandline options.
+     *
      *        E.g.,
      *        slx::command_line_options_t options{ {"in", "i", true}, {"out", "o", false} };
      *
@@ -49,14 +50,17 @@ namespace slx {
     using command_line_options_t = ::std::vector <std::tuple<std::string, std::string, bool>>;
 
     /**
-     * \brief Internal use only; do not call directly...
-     * @return A static map of key/value pairs.
+     * \brief Internal use only; do not call directly.
+     * @return A static non-const pointer to a map of key/value pairs.
      */
     inline command_line_options_result_t *get_command_line_args_() {
         static command_line_options_result_t command_line;
         return &command_line;
     }
 
+   /**
+    * TODO: Evaluate...Is the even required. 
+    */
     inline void clear_command_line_options() {
         get_command_line_args_()->clear();
     }
