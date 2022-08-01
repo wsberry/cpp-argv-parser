@@ -74,6 +74,28 @@ namespace slx {
     }
 
     /**
+     * \brief Check if the command line contained the option.
+     * @param key
+     * @return true if option is present on the command line.
+     */
+    inline bool command_line_option(const std::string_view key)
+    {
+        return get_command_line_args_()->count(key.data()) > 0;
+    }
+
+    /**
+    * \brief Get the command line contained the option.
+    * @param key
+    * @return true if option is present on the command line.
+    */
+    inline const std::string& get_command_line_option(const std::string_view key) noexcept
+    {
+        auto c = get_command_line_args_();
+        if (c->count(key.data())) { return (*c)[key.data()]; }
+        return {};
+    }
+
+    /**
      * \brief Dumps out the command line args for debugging/viewing.
      */
     template<bool debug_only = false>

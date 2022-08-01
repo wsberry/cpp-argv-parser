@@ -108,7 +108,12 @@ void test_with_valid_args()
       g_test_results.back().succeeded =
          expect(0 == r.count("app")).value_
          && expect("input.json" == r["in"]).value_
-         && expect("output.json" == r["out"]).value_;
+         && expect("output.json" == r["out"]).value_
+         //
+         // Another way to get an option:
+         //
+         && expect("input.json" == slx::get_command_line_option("in")).value_;
+      
 #else
       create_log_report_result("Parsing with all required arguments should SUCCEED.");
       g_test_results.back().succeeded =
@@ -116,6 +121,10 @@ void test_with_valid_args()
          && ("input.json" == r["in"])
          && ("output.json" == r["out"]);
 #endif
+      
+
+      
+      
    };
 }
 
