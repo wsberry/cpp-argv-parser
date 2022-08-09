@@ -114,7 +114,7 @@ int main(int argc, char** argv)
         // . Do stuff
         // .
         // validate();
-				//
+	//
         if constexpr (has_portable_file_dialogs)
         {
             // Use portable dialogs if present:
@@ -151,7 +151,7 @@ int main(int argc, char** argv)
 }
 ~~~
 
-If the '--in' option is not provided on the command line in this example then the following is displayed when `has_portable_file_dialogs`is <font color='#0080FF'>false</font>  (otherwise a dialog with the same information will be displayed) :
+If the '--in' option was not provided on the command line, then the following would be displayed when `has_portable_file_dialogs`is <font color='#0080FF'>false</font>:
 
 ~~~bash
 Command Line Args:
@@ -195,7 +195,7 @@ Bash 3.2.57 is the default installed version on the macOS. To use the install an
 
 #### <font color='#0077c6'>Updating Bash</font>
 
-Run the '<font color='#943126'>mac-os-install-prerequisites.sh</font>' if you do not have the current version of bash. 
+Run '<font color='#943126'>mac-os-install-prerequisites.sh</font>' if you do not have the current version of bash. 
 
 ~~~bash
 ./scripts/mac-os-install-prerequisites.sh
