@@ -88,7 +88,7 @@ namespace slx {
     * @param key
     * @return true if option is present on the command line.
     */
-    inline const std::string& get_command_line_option(const std::string_view key) noexcept
+    inline const std::string get_command_line_option(const std::string_view key) noexcept
     {
         auto c = get_command_line_args_();
         if (c->count(key.data())) { return (*c)[key.data()]; }

@@ -4,6 +4,8 @@
 
 ##### Version 1.0 
 
+##### Apache License 2.0
+
 Implements a header only command line parser for C++. 
 
 Although it has been implemented for C++ 17 and above it is easily modifiable for older C++ standards.
@@ -114,7 +116,7 @@ int main(int argc, char** argv)
         // . Do stuff
         // .
         // validate();
-	//
+	      //
         if constexpr (has_portable_file_dialogs)
         {
             // Use portable dialogs if present:
@@ -195,7 +197,7 @@ Bash 3.2.57 is the default installed version on the macOS. To use the install an
 
 #### <font color='#0077c6'>Updating Bash</font>
 
-Run '<font color='#943126'>mac-os-install-prerequisites.sh</font>' if you do not have the current version of bash. 
+Run '<font color='#943126'>mac-os-install-prerequisites.sh</font>' if you do not have the current version of bash. You may have to add the executable attribute (i.e., `chmod +x`).
 
 ~~~bash
 ./scripts/mac-os-install-prerequisites.sh
@@ -301,4 +303,3 @@ This warning may be safely ignored.
   ~~~
 
 - [ ] Complete unit tests.
-  
