@@ -58,8 +58,8 @@ fi
 PROJECT_NAME="Command Line Parser Tests"
 
 cmd_line_options="$1 $2 $3 $4"
-option_clean="false"				# Clean the CMake generated projects.
-option_build="false"				# Build from the CMake generated projects.
+option_clean="false"			# Clean the CMake generated projects.
+option_build="false"			# Build from the CMake generated projects.
 option_generate="false"			# Generate projects from CMake.
 
 # The paths below are relative to 'ROOT_REPO_DIR'

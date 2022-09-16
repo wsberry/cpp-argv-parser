@@ -23,8 +23,8 @@ int main(int argc, char*[] argv)
 {
     slx::command_line_options_t options
     { 
-      {"in",  "i", /*required:*/ true}, 
-      {"out", "o", /*required:*/ false} 
+      {"in",  "i", /*option is required:*/ true}, 
+      {"out", "o", /*option is required:*/ false} 
     };
   
     auto cmd_line = slx::parse_command_line_args(options, argc, argv, [](){} );
@@ -237,9 +237,26 @@ The <font color='#0077c6'>*chpass*</font> utility allows editing of the user dat
 
 Note that the shebang line in any bash scripts you create should be updated to use `#!/usr/bin/env bash`. This works by finding the latest version of bash (by convention the latest version of directory occurs first) and ensures your scripts generally remain portable for Linux and Windows in addition to working on macOS.
 
-**Note**:
+**Notes**:
 On macOS if you are using Xcode then be sure to install its command line tools by running: 
-`sudo xcode-select —reset`.
+`sudo xcode-select —install` or `sudo xcode-select —reset`.
+
+Enable the command line tools:
+
+`sudo xcode-select --switch /Library/Developer/CommandLineTools`
+
+If you are running macOS Monterey Version 12.5+ then you may recieve the error when using CMake since Xcode is assumed on the macOS:
+
+<font color='#943126'>CMake Error at CMakeLists.txt:12 (project):</font>
+	<font color='#943126'>No CMAKE_CXX_COMPILER could be found.</font>
+
+To correct this error run:
+
+~~~bash
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+~~~
+
+All this assumes of course that you plan to use Xcode for macOS development.
 
 ### <font color='#0077c6'>Linux Users</font>
 
