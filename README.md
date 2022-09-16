@@ -245,9 +245,9 @@ Enable the command line tools:
 
 `sudo xcode-select --switch /Library/Developer/CommandLineTools`
 
-If you are running macOS Monterey Version 12.5+ then you may receive the error when using CMake since Xcode is assumed on the macOS:
+If you are running macOS Monterey Version 12.5+ then you may receive the following error when using CMake since Xcode is assumed on the macOS:</br>
 
-<font color='#943126'>CMake Error at CMakeLists.txt:12 (project):</font>
+<font color='#943126'>CMake Error at CMakeLists.txt:12 (project):</font></br>
 	<font color='#943126'>No CMAKE_CXX_COMPILER could be found.</font>
 
 To correct this error run:
