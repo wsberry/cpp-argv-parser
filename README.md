@@ -237,15 +237,15 @@ The <font color='#0077c6'>*chpass*</font> utility allows editing of the user dat
 
 Note that the shebang line in any bash scripts you create should be updated to use `#!/usr/bin/env bash`. This works by finding the latest version of bash (by convention the latest version of directory occurs first) and ensures your scripts generally remain portable for Linux and Windows in addition to working on macOS.
 
-**Notes**:
-On macOS if you are using Xcode then be sure to install its command line tools by running: 
+**Notes**:</br>
+On macOS if you are using Xcode then be sure to install its command line tools by running:</br> 
 `sudo xcode-select —install` or `sudo xcode-select —reset`.
 
 Enable the command line tools:
 
 `sudo xcode-select --switch /Library/Developer/CommandLineTools`
 
-If you are running macOS Monterey Version 12.5+ then you may recieve the error when using CMake since Xcode is assumed on the macOS:
+If you are running macOS Monterey Version 12.5+ then you may receive the error when using CMake since Xcode is assumed on the macOS:
 
 <font color='#943126'>CMake Error at CMakeLists.txt:12 (project):</font>
 	<font color='#943126'>No CMAKE_CXX_COMPILER could be found.</font>
