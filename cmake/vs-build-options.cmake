@@ -55,6 +55,13 @@ macro(standard_visual_studio_options)
 	#   C4334: result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?) 
 	#   C4715: 'upb_encode_scalarfield': not all control paths return a value
 	#   C4789: buffer 'ret' of size 8 bytes will be overrun; 16 bytes will be written starting at offset 0
+ 
+    if(MSVC)
+        # MSVC does not correctly report __cplusplus by default therefore the following cmake code:
+        # See: https://docs.microsoft.com/bs-cyrl-ba/cpp/build/reference/zc-cplusplus?view=msvc-160 for details
+        #
+        target_compile_options(infra INTERFACE /Zc:__cplusplus)
+    endif()
 	
 	if (MAKE_WIN32_LEAN_AND_MEAN)
 		add_definitions(-DWIN32_LEAN_AND_MEAN -DVC_EXTRALEAN)
