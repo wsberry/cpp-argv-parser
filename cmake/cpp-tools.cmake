@@ -16,8 +16,13 @@
 #
 # About:
 #	Implements functions and macros to assist in creating CMake project scripts.
+#
+# TODO:
+#   Document this file!!!
 # -----------------------------------------------------------------------------------------
 
+# Call this function if Git is SCM is required.
+#
 function(require_git)
 	find_package(Git)
 	IF (NOT GIT_FOUND)
@@ -25,6 +30,8 @@ function(require_git)
 	ENDIF()
 endfunction()
 
+# Find a substring and replace it with another.
+#
 macro(replace_substring string_to_find string_to_replace string_to_search string_result)
 	#
 	# E.g., replace_substring("/deps"  "/_deps" "${CMAKE_CURRENT_BINARY_DIR}" DEPS_DIR)
@@ -35,7 +42,6 @@ macro(replace_substring string_to_find string_to_replace string_to_search string
 	ENDIF()
 endmacro()
 
-
 # Create a CMake module that defines the paths to the installed dependency include file.
 # 
 # The contents for this file will be generated in by 'install_repo' function
@@ -44,12 +50,16 @@ endmacro()
 SET(dependency_module_path "${CMAKE_BINARY_DIR}/_cmake/dependency-includes.cmake")
 LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_BINARY_DIR}/_cmake")
 
+# Use to exclude a dependency module path.
+#
 function(remove_dependency_module)
 	IF (EXISTS "${dependency_module_path}")
 		FILE(REMOVE "${dependency_module_path}")
 	ENDIF()
 endfunction()
 
+# Install/Clone a Git Repo
+#
 function(install_repo url branch_name install_path caption)
 
 	require_git()
@@ -65,7 +75,7 @@ function(install_repo url branch_name install_path caption)
 		# 2. The "--single-branch" command clones only the specified branch. If you need to work
 		#    with other branches in a repo then uncheck the option defined below.
 		#
-		option(GIT_INCLUDE_SINGLE_BRANCH_ONLY "--recurse-submodules" ON)
+		option(GIT_INCLUDE_SINGLE_BRANCH_ONLY "clone only the specified branch (uses git --single-branch flag)" ON)
 
 		IF (GIT_INCLUDE_SINGLE_BRANCH_ONLY)
 			execute_process(COMMAND "git" "clone" "--single-branch" "--recurse-submodules" "-b" "${branch_name}" "${url}" "${install_path}")
@@ -80,15 +90,17 @@ function(install_repo url branch_name install_path caption)
 		message(STATUS " - Found ${caption} Library.")
 	ENDIF()
 
-	# Some repositories do not following the convention of having an 'include' directory.
+	# Some repositories do not follow the convention of having an 'include' directory.
 	# For these cases the ${install_path} is included, but sometimes neither of the following
-	# will be sufficient. If we only all followed the same conventions :)
+	# will be sufficient. If only all us always followed the same conventions :)
 	#
 	FILE(APPEND "${dependency_module_path}" "\n# ${caption}:")
 	FILE(APPEND "${dependency_module_path}" "\ninclude_directories(\"${install_path}\")")
 	FILE(APPEND "${dependency_module_path}" "\ninclude_directories(\"${install_path}/include\")\n")
 endfunction()
 
+# Show the CMake project output directories as they are defined.
+#
 function(show_project_output_directories)
 	message(STATUS "\nCMake Directory Definitions:")
 	message(STATUS " CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
@@ -103,6 +115,8 @@ function(show_project_output_directories)
 	message(STATUS " Using ${CMAKE_CXX_COMPILER_ID} version ${CMAKE_CXX_COMPILER_VERSION} with C++${CMAKE_CXX_STANDARD}\n")
 endfunction()
 
+# Show the project include directories.
+#
 function(show_project_include_directories)
 	message(STATUS "\nProject Defined Include Directories:")
 	get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
@@ -112,6 +126,7 @@ function(show_project_include_directories)
 	message(STATUS "\n")
 endfunction()
 
+# TODO FIX: This will not work with cmake therefore do something else.
 # For consistency define multi-configuration builds, Debug and Release, on Linux and Darwin.
 #
 macro(generate_debug_and_release_configuration_support)
@@ -120,7 +135,8 @@ macro(generate_debug_and_release_configuration_support)
 	SET_PROPERTY(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "${CMAKE_CONFIGURATION_TYPES}")
 endmacro()
 
-# Much of the code in here is by Jason Turner
+# Much of the code that follows here was created by Jason Turner:
+#
 # See: https://github.com/suhasghorp/jason-cpp-starter/tree/main/cmake
 #
 function(tool_enable_doxygen)
